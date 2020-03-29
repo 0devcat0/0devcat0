@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.0.4/jscolor.min.js"></script>
+  <link rel="stylesheet" href="/styles.b61e60ae.css">
+  <script src="https://kit.fontawesome.com/e122039a23.js" crossorigin="anonymous"></script>
+  <title>Green Energy Club</title>
+<script src="/styles.b61e60ae.js"></script></head>
+<body style="background: #fff">
+  <div class="container">
+    <div class="header-content">
+      <span class="icon-logo"><i class="fas fa-sun fa-spin-slow"></i></span>
+      <h1>Green Energy Club</h1>
+      <p class="lead">Come together and share green energy</p>
+    </div>
+
+    <div class="sign-in" style="display: none;">
+      <button class="btn btn-primary">Sign in with NEAR</button>
+    </div>
+
+    <hr>
+
+    <div class="after-sign-in" style="display: none;">
+
+        <h3>Your Dashboard</h3>
+
+        <div class="row justify-content-sm-center">
+            <div class="col-md-1"><i class="far fa-smile f-icons fa-fw"></i></div>
+            <div class="col-md-2">Account:</div>
+            <div class="col-md-6"><p id="account-id"></p></div>
+        </div>
+
+
+        <div class="row justify-content-sm-center">
+            <div class="col-md-1">
+                <i class="fas fa-solar-panel f-icons fa-fw"></i>
+            </div>
+            <div class="col-md-2">
+                Solar Panel
+            </div>
+            <div class="col-md-6">
+                <div class="row top-row">
+                    <div class="col-md-4">Generated:</div>
+                    <div class="col-md-6"><span id="gen"></span> Units</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">Daily usage:</div>
+                    <div class="col-md-6"><span id="usage"></span> Units</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">Total:</div>
+                    <div class="col-md-6"><span id="total-for-club"></span></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10">
+                        <button class="btn btn-info" onclick="dailyUsage(); genUnits(); dailyTotal();">Check</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"><button class="btn btn-outline-secondary submit-btns">Claim</button></div>
+                    <div class="col-md-6"><button class="btn btn-outline-success submit-btns">Send</button></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="after-sign-in sign-out" style="display: none;">
+        <hr>
+        <button class="btn btn-primary">Sign Out</button>
+    </div>
+
+  </div>
+
+  <script>var generated;
+var usageUint;
+var total; // Calculate the amount of generated energy untis - normally would be data from solar panel
+
+function genUnits() {
+  generated = Math.floor(Math.random() * 15 + 1);
+  document.getElementById("gen").innerHTML = generated;
+} // Calculate the amount of daily energy usage - normally would be data from house
+
+
+function dailyUsage() {
+  usageUint = Math.floor(Math.random() * 10 + 1);
+  document.getElementById("usage").innerHTML = usageUint;
+} // Amount to be claimed from the club or sent to the club
+
+
+function dailyTotal() {
+  total = generated - usageUint;
+  document.getElementById("total-for-club").innerHTML = total;
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/nearlib@0.19.1/dist/nearlib.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  <script src="/config.bcd7753d.js"></script>
+  <script src="/main.1f19ae8e.js"></script>
+
+</body>
+</html>
